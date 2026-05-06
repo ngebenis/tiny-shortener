@@ -34,6 +34,6 @@ jobs:
             sudo mkdir -p data
             sudo chmod -R 777 data
             
-            # Restart kontainer
+            # Restart kontainer tinyshortener
             sudo docker compose down
             sudo docker compose up --build -d
