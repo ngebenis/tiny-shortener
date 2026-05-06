@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           source: "."
-          target: "/var/www/html"
+          target: "/var/www/html/tinyshortener"
 
       - name: Deploy to VPS via SSH
         uses: appleboy/ssh-action@v0.1.10
@@ -35,5 +35,5 @@ jobs:
             sudo chmod -R 777 data
             
             # Restart kontainer
-            sudo docker-compose down
-            sudo docker-compose up --build -d
+            sudo docker compose down
+            sudo docker compose up --build -d
