@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiny Shortener - Shorten Your Link</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
+        <h1 class="text-2xl font-bold mb-6 text-center text-indigo-600">Tiny Shortener</h1>
+        
+        <div class="space-y-4">
+            <input type="url" id="fullUrl" placeholder="Paste your long URL here..." 
+                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-400 outline-none">
+            
+            <button onclick="shorten()" 
+                class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">
+                Shorten!
+            </button>
+        </div>
+
+        <div id="result" class="mt-6 hidden border-t pt-4">
+            <p class="text-sm text-gray-500">Your short link:</p>
+            <div class="flex items-center gap-2">
+                <input type="text" id="shortenedUrl" readonly 
+                    class="w-full bg-gray-50 p-2 text-indigo-600 font-medium rounded border">
+            </div>
+            <p id="stats" class="text-xs text-gray-400 mt-2 italic"></p>
+        </div>
+    </div>
+
+    <script>
+        async function shorten() {
+            const fullUrl = document.getElementById('fullUrl').value;
+            const res = await fetch('/shorten', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ fullUrl })
+            });
+            const data = await res.json();
+            
+            if (data.shortUrl) {
+                document.getElementById('result').classList.remove('hidden');
+                document.getElementById('shortenedUrl').value = data.shortUrl;
+                
+                // Ambil kode unik untuk simulasi info statistik
+                const code = data.shortUrl.split('/').pop();
+                document.getElementById('stats').innerText = `Track clicks at: /stats/${code}`;
+            }
+        }
+    </script>
+</body>
+</html>
