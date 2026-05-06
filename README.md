@@ -35,23 +35,23 @@ tiny-shortener/
 Follow this steps at terminal or your command prompt:
 1. Folder Preparation: 
 Open your terminal and create a new project directory: 
-# mkdir tiny-shortener && cd tiny-shortener 
+#mkdir tiny-shortener && cd tiny-shortener 
 
 2. Initialization: 
 Create the basic configuration file: 
-# npm init -y
+#npm init -y
 
 3. Dependency Installation: 
 Install all the required libraries (Express, SQLite, and Nanoid): 
-# npm install express sqlite3 sqlite nanoid
+#npm install express sqlite3 sqlite nanoid
 
 4. Prepare Sub-Folders: 
 Create folders to store data and frontend files: 
-# mkdir data public  
+#mkdir data public  
 
 5. Running the Server: 
 After you have copied the server.js and index.html code into their respective folders, run the application with the following command: 
-# node server.js  
+#node server.js  
 
 6. Browser Access: 
 Open your browser and visit the following address: http://localhost:3000 
