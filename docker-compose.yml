@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  tiny-shortener:
+    build: .
+    container_name: tiny-shortener-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data
+    restart: always
