@@ -1,20 +1,20 @@
 ### Tiny Shortener 
 
 🔧 Stack
-Backend: Nodejs
-DB: SQLite / JSON file
-Frontend: HTML + Tailwind (no heavy framework)
+- Backend: Nodejs
+- DB: SQLite / JSON file
+- Frontend: HTML + Tailwind (no heavy framework)
 
 ✨ Feature
-Generate short URL
-Redirect
-Statistik klik
+- Generate short URL
+- Redirect
+- Statistik klik
 
 🧠 Why is it safe?
-No SSR
-Light Query
-No need frontend framework
-Low RAM - Safe for VPS with limited memory
+- No SSR
+- Light Query
+- No need frontend framework
+- Low RAM - Safe for VPS with limited memory
 
 * Requirements:
   - Nodejs (latest)
